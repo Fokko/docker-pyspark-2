@@ -40,7 +40,7 @@ RUN mkdir -p /usr/spark/work/ \
 ENV SPARK_MASTER_PORT 7077
 
 RUN pip install --upgrade pip \
-  && pip install --upgrade --quiet pylint pytest coverage numpy setuptools
+  && pip install --upgrade --quiet pylint pytest coverage numpy setuptools scipy findspark
 
 RUN wget -O ./bin/sbt https://raw.githubusercontent.com/paulp/sbt-extras/master/sbt \
   && chmod 0755 ./bin/sbt \
