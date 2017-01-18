@@ -26,13 +26,13 @@ RUN cd /opt/ \
 
 # SPARK
 RUN cd /usr/ \
-  && wget http://d3kbcqa49mib13.cloudfront.net/spark-1.6.1-bin-hadoop2.6.tgz \
-  && tar xzf spark-1.6.1-bin-hadoop2.6.tgz \
-  && rm spark-1.6.1-bin-hadoop2.6.tgz \
-  && mv spark-1.6.1-bin-hadoop2.6 spark
+  && wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.2-bin-hadoop2.7.tgz \
+  && tar xzf spark-2.0.2-bin-hadoop2.7.tgz \
+  && rm spark-2.0.2-bin-hadoop2.7.tgz \
+  && mv spark-2.0.2-bin-hadoop2.7 spark
 
 ENV SPARK_HOME /usr/spark
-ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.9-src.zip
+ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.3-src.zip
 
 RUN mkdir -p /usr/spark/work/ \
   && chmod -R 777 /usr/spark/work/
