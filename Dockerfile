@@ -32,7 +32,7 @@ RUN cd /usr/ \
   && mv spark-2.1.0-bin-hadoop2.7 spark
 
 ENV SPARK_HOME /usr/spark
-ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.3-src.zip
+ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.4-src.zip
 
 RUN mkdir -p /usr/spark/work/ \
   && chmod -R 777 /usr/spark/work/
