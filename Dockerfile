@@ -17,19 +17,19 @@ ENV GIT_SSL_NO_VERIFY=false
 
 # Java
 RUN cd /opt/ \
-  && wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-linux-x64.tar.gz" \
-  && tar xzf jdk-8u66-linux-x64.tar.gz \
-  && rm jdk-8u66-linux-x64.tar.gz \
-  && update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_66/bin/java 100 \
-  && update-alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_66/bin/jar 100 \
-  && update-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_66/bin/javac 100
+  && wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz" \
+  && tar xzf jdk-8u144-linux-x64.tar.gz \
+  && rm jdk-8u144-linux-x64.tar.gz \
+  && update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_144/bin/java 100 \
+  && update-alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_144/bin/jar 100 \
+  && update-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_144/bin/javac 100
 
 # SPARK
 RUN cd /usr/ \
-  && wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.2-bin-hadoop2.7.tgz \
-  && tar xzf spark-2.0.2-bin-hadoop2.7.tgz \
-  && rm spark-2.0.2-bin-hadoop2.7.tgz \
-  && mv spark-2.0.2-bin-hadoop2.7 spark
+  && wget https://d3kbcqa49mib13.cloudfront.net/spark-2.1.0-bin-hadoop2.7.tgz \
+  && tar xzf spark-2.1.0-bin-hadoop2.7.tgz \
+  && rm spark-2.1.0-bin-hadoop2.7.tgz \
+  && mv spark-2.1.0-bin-hadoop2.7 spark
 
 ENV SPARK_HOME /usr/spark
 ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.3-src.zip
